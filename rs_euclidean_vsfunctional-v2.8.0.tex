@@ -1,5 +1,8 @@
 %Second submission for Scientific Reports 21 June 2017
 \documentclass[11pt, onecolumn]{article}
+%\usepackage[style=nature]{biblatex}
+%\usepackage[backend=biber]{biblatex}
+%\addbibresource{biblatex-examples.bib}
 \usepackage{lipsum}
 \usepackage{lastpage}
 \usepackage[superscript,biblabel]{cite}
@@ -23,7 +26,7 @@
 \usepackage{subfig}
 \usepackage{epstopdf}
 \usepackage{textcomp}  %for degree symbol
-\usepackage{natbib}
+\usepackage[square,sort,comma,numbers]{natbib}
 \usepackage{breakcites}
 \usepackage{amsmath,amssymb}
 %\usepackage[CaptionAfterwards]{fltpage}
@@ -141,7 +144,7 @@ Finally, we extend the network theory based results,   performing a perfusion me
 \label{se:maandme}
 \subsection{Participants}
 
-The intracranial electroencephalography recordings were collected at the Toronto Western Hospital (Toronto ON, Canada). Our research protocol was approved by the institutional review board and informed consent was obtained from the participants. All methods were performed in accordance with the relevant guidelines and regulations. Informed consent was obtained from all patients.
+The intracranial electroencephalography recordings were collected at the Toronto Western Hospital (Toronto ON, Canada). Our research protocol was approved by the University Health Network Research Ethics Board and informed consent was obtained from the participants. All methods were performed in accordance with the relevant guidelines and regulations. Informed consent was obtained from all patients.
 11 participants (6 female) with pharmacologically-refractory mesial temporal lobe epilepsy underwent a surgical procedure, in which electrodes were implanted subdurally on the temporal lobe and stereotaxic depth electrodes located in the hippocampi or other deep structures (Figure \ref{fig0}).
 %http://www.epilepsy.com/information/professionals/diagnosis-treatment/surgery/implanted-eeg-electrodes
 For each patient, electrode placement was determined to
@@ -330,9 +333,10 @@ Importantly, the set of binary networks has an internal structure that progressi
 \section*{Results}
 
 First we study the statistical significance for the two conditions, eyes closed and eyes open, using the correlation matrix for power and phase based connectivity in the alpha band. 
-The effect of a higher degree of alertness (going from eyes closed to eyes open) for the various regions of interest is shown in Table \ref{Table:powconnect} for power-based connectivity and for phase-based (ISPC and PLI) connectivity in Tables \ref{Table:phaseconnectpli} and \ref{Table:phaseconnectispc}. The p-values of the brain regions that contain at least one electrode that   differentiate between the two conditions for an alpha level of 0.05 are displayed.
 
-\subsection{Power based connectivity (correlation matrix)}
+The effect of a higher degree of alertness (going from eyes closed to eyes open) for the various regions of interest for power-based connectivity in the alpha band is shown in Table \ref{Table:powconnect}. All the patients (11/11) have at least one electrode with a power-based connectivity pattern that is statistically significant for the two conditions.
+
+%\subsection{Power based connectivity (correlation matrix)}
 
 \begin{table}
 \centering
@@ -356,8 +360,10 @@ Statistical significance for power-based connectivity in the alpha band calculat
 }
 \end{table}
 
-\subsection{Phase-based connectivity}
-Only in 2/11 subjects, the phase based connectivity shows statistically relevant difference between the two conditions in inter hemispheral and frontal electrodes. Deep, hippocampal, temporal electrodes do not show difference between the two conditions. This is in agreement with EEG studies that show a decrease in alpha activity across the entire cortex in response to visual stimulation \citep{barry2007eeg}.
+Tables \ref{Table:phaseconnectispc} and \ref{Table:phaseconnectpli} show the statistical significance analysis for phase-based (ISPC and PLI) connectivity in the alpha band.
+%The p-values of the brain regions that contain at least one electrode that differentiate between the two conditions for an alpha level of 0.05 are displayed.
+%\subsection{Phase-based connectivity}
+Only in subjects (2/11), the phase based connectivity shows statistically significant difference between the two conditions in inter hemispheral and frontal electrodes. Deep, hippocampal and temporal electrodes do not show statistically significant difference between the two conditions. This is in agreement with EEG studies that show a decrease in alpha activity across the entire cortex in response to visual stimulation \citep{barry2007eeg}.
 %Grid and interhemispheric electrode implants are likely subjected to a heavier informational flow than the other regions. A grid occupies a larger extension of the brain than any other implants, and interhemispheric electrodes have the longest strips.  
 %To investigate whether the alpha desynchronization hypothesis holds, we perform multivariate analysis for the mesoscopic wiring cost connectivity matrices.
 
@@ -497,8 +503,9 @@ We acknowledge the support of the Bial Foundation, grant number  $\#206\/14$.
 \section*{Additional Information}
 The authors declare no competing financial interest.
 
-\bibliographystyle{unsrt}
-%\bibliographystyle{apacite}
+%\bibliographystyle{nature}
+%\printbibliography
+\bibliographystyle{naturemag}
 \bibliography{C:/workspace/github/papers/bibliography-jgr/bibliojgr}
 
 
