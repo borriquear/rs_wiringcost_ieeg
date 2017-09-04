@@ -1,4 +1,4 @@
-%Fourth submission Sci Rep 21 August 2017
+%Fourth submission Sci Rep 4 September 2017
 %Second submission for Scientific Reports 21 June 2017
 \documentclass[11pt, onecolumn]{article}
 %\usepackage[style=nature]{biblatex}
@@ -106,9 +106,9 @@
 
 \abstract{This paper addresses a fundamental question, are eyes closed and eyes open resting states equivalent baseline  conditions, or do they have consistently different electrophysiological signatures?
 We compare the functional connectivity patterns in an eyes closed resting state with an eyes open resting state to investigate the alpha desynchronization hypothesis. The change in functional connectivity from eyes closed to eyes open, is here, for the first time, studied with intracranial recordings.
-We perform network connectivity in iEEG and we find that phase-based connectivity is sensitive to transition from eyes closed to eyes open only in interhemispheral and frontal electrodes. Power based connectivity, on the other hand, consistently discriminate between the two conditions in temporal and interhemispheral electrodes. 
+We perform network connectivity in iEEG and we find that phase-based connectivity is sensitive to transition from eyes closed to eyes open only in interhemispheral and frontal electrodes. Power based connectivity, on the other hand, consistently discriminates between the two conditions in temporal and interhemispheral electrodes. 
 Additionally, we provide a calculation of the wiring cost, defined in terms of the connectivity between electrodes weighted by the distance.
-We find that the wiring cost variation from eyes closed to eyes open is sensitive to eyes closed and eyes open conditions. We extend the standard network-based approach using a perfusion method that to do not rely on threshold selection problem.
+We find that the wiring cost variation from eyes closed to eyes open is sensitive to eyes closed and eyes open conditions. We extend the standard network-based approach using a perfusion method that to does not rely on threshold selection problem.
 The wiring cost measure defined here and this new methodology, provide a new avenue for understanding the electrophysiology of resting state.  }
 
 \section{Introduction}
@@ -125,7 +125,7 @@ Second, the resting state literature from its inception is eminently based on th
 This paper attempts to better understand the brain's resting state by characterizing the two most common baseline conditions in neuropsychology, eyes closed and eyes open, using intracranial electroencephalogram (iEEG). Note that intracraneal electroencephalography, iEEG, and electrocorticography, ECoG, are here used indistinctly.
 
 %hypothesis
-Previous studies have identified a reduction in the number of connections when the closed eyes condition is compared to the eyes open condition, in the alpha band \citep{tan2013difference}; \citep{barry2007eeg}. This is known as  "alpha desynchronization". Using EEG, Barry and colleagues \citep{barry2007eeg} found that there are electrophysiological differences -topography as well as power levels- between the eyes closed and eyes open resting states.  
+Previous studies have identified a reduction in the number of connections when the eyes closed condition is compared to the eyes open condition, in the alpha band \citep{tan2013difference}; \citep{barry2007eeg}. This is known as  "alpha desynchronization". Using EEG, Barry and colleagues \citep{barry2007eeg} found that there are electrophysiological differences -topography as well as power levels- between the eyes closed and eyes open resting states.  
 A higher degree of alertness caused by opening one's eyes is associated with the attenuation of alpha rhythm, which is supplanted by desynchronized low voltage activity \citep{niedermeyer2005electroencephalography}.
 Geller and colleagues \citep{geller2014eye} found that eye closure causes a widespread low-frequency power increase and focal gamma attenuation in the human electrocorticogram. 
 %These results, overall, show that eye closure affects a broad range of frequencies and brain areas outside the $\alpha$ and the visual cortex respectively.
@@ -150,7 +150,7 @@ The intracranial electroencephalography recordings were collected at the Toronto
 11 participants (6 female) with pharmacologically-refractory mesial temporal lobe epilepsy underwent a surgical procedure, in which electrodes were implanted subdurally on the temporal lobe and stereotaxic depth electrodes located in the hippocampi or other deep structures (Figure \ref{fig0}).
 %http://www.epilepsy.com/information/professionals/diagnosis-treatment/surgery/implanted-eeg-electrodes
 For each patient, electrode placement was determined to
-best pinpoint the origin of seizure activity. In addition to electrodes implanted in the temporal lobe, including depth electrodes in the hippocampi, some patients had electrodes implanted in frontal, interhemispheral and the cortical convexity (see Table \ref{Table:demog}). The electrode implants are thus not identical for all participants, though they tend to overlap in the mesial temporal lobe epilepsy (MTLE) sensitive regions. This limits the ability to directly compare the wiring cost or other network properties among participants. However, we can still compare and generalize participants by examining the difference between the two conditions. For example, in order to compare the functional connectivity pattern for two participants, one with a grid in the left cortex and another with depth electrodes in the hippocampus and temporal areas, we calculate the difference between network parameters from eyes closed to eyes open, within each participant.
+best pinpoint the origin of seizure activity. In addition to electrodes implanted in the temporal lobe, including depth electrodes in the hippocampi, some patients had electrodes implanted in frontal, interhemisphic and the cortical convexity (see Table \ref{Table:demog}). The electrode implants are thus not identical for all participants, though they tend to overlap in the mesial temporal lobe epilepsy (MTLE) sensitive regions. This limits the ability to directly compare the wiring cost or other network properties among participants. However, we can still compare and generalize participants by examining the difference between the two conditions. For example, in order to compare the functional connectivity pattern for two participants, one with a grid in the left cortex and another with depth electrodes in the hippocampus and temporal areas, we calculate the difference between network parameters from eyes closed to eyes open, within each participant.
 
 \begin{table}
 \centering
@@ -203,27 +203,28 @@ Freeman and Zhai \citep{freeman2009simulated} have shown that the resting ECoG i
 
 \subsection{iEEG acquisition}
 Continuous iEEG data were recorded in an unshielded hospital room using NATUS Xltech digital video-EEG system.
-Commercially available, hybrid depth electrodes and subdural electrodes were used to collect continuous iEEG recordings. Common reference and ground electrodes were placed subdurally at a location distant from any recording electrodes with contacts oriented toward the dura.
-Electrode localization was accomplished by localizing the implanted electrodes on the postoperative computed tomography (CT) scan.
-Subdural electrodes were arranged in strip configurations (4, 6 or 8 contacts) with an inter-electrode spacing of 10 mm. The location of the electrode implants is not identical across patients, however, all participants had depth  electrodes,  mostly  in the hippocampi   (Table \ref{Table:demog}).
+Commercially available, depth electrodes and subdural electrodes were used to collect continuous iEEG recordings. Common reference and ground electrodes were placed subgalealy at a location distant from any recording electrodes with contacts oriented toward the dura.
+Electrode localization was accomplished by localizing the implanted electrodes on the postoperative computed tomography (CT) scan using the   Matlab toolbox iELVis for localizing and displaying human intracranial  electrode data \citep{pmid28192130}.
+Subdural electrodes were arranged in strip or grid configurations with an inter-electrode spacing of 10 mm. The location of the electrode implants was not identical across patients, however, all participants had depth  electrodes,  mostly  in the hippocampi   (Table \ref{Table:demog}).
 
 \subsection{Signal processing}
 Signals were filtered online using a high-pass (0.1 cutoff frequency) and an anti-aliasing low-pass filter. %ys is this correct?
 Offline filtering using Matlab in house-scripts, consisted of a high-pass and low-pass filter at 0.5-70 Hz and a notch filter applied at 60 Hz to remove electrical line noise.
 
-To extract power and phase estimates of time-varying frequency-specific, the ECoG signals were convolved with complex-valued Morlet wavelets. %A wavelet is in essence a convolution kernel used to determine to what extend the signal contains features that are similar to the properties of the wavelet. If the wavelet convolution is repeatidly used on the same data for different frequencies we obtain a time-frequency representation.
+To extract power and phase estimates of time-varying frequency-specific, the ECoG signals were convolved with complex-valued Morlet wavelets. 
+%A wavelet is in essence a convolution kernel used to determine to what extend the signal contains features that are similar to the properties of the wavelet. If the wavelet convolution is repeatidly used on the same data for different frequencies we obtain a time-frequency representation.
 The  wavelet convolution transformed the voltage trace at each electrode to obtain both instantaneous power and phase trace for each frequency.
 The wavelet length was defined in the range of -1 to 1 seconds and was centered at $time = 0$ (in doing so we guarantee that the wavelet has an odd number of points). 
-We used a constant number of wavelet cycles (7). This number was chosen since we have long trial  periods (3 minutes) in which we expect frequency-band-specific activity, and a large number  of cycles (from 7 to 10)  facilitates  identifying  temporally sustained  activity \citep{cohen2014analyzing}. 
+We used a constant number of wavelet cycles (7). This number was chosen since we have long trial  periods (3 minutes) in which we expect frequency-band-specific activity and a large number  of cycles (from 7 to 10) to facilitate  identifying  temporally sustained  activity \citep{cohen2014analyzing}. 
 
 Of note, it is also possible to use a number of wavelet cycles that changes as a function of frequency, to adjust the balance between temporal and frequency precision as a function of the frequency of the wavelet. Thus, there is a trade-off between temporal and frequency precision. Since we are processing long epochs, we favour frequency over time precision and therefore chose to use a large number  of wave cycles.
 
 \subsection{Connectivity measures}
 %The wiring cost between two electrodes is calculated as the Euclidean distance between them weighted by the functional connectivity value linking the electrodes.  
 %For example, for a given subject, we calculate the wiring cost for the frequency of interest $f$ as the wise product of the matrix containing the physical distance between any two electrodes ($P$) which is obviously the same for all frequency bands and the functional connectivity matrix ($F$) at frequency $f$, $W = P*F(f)$. $F$.
-We are interested in calculating the wiring cost associated with the functional connectivity map \footnote{The measures of correlated activity are not real measures of “connectivity”. We use the term connectivity because is the standard nomenclature but a caveat on the dangers of assuming equality between correlated activity and connectivity is worth mentioning.} defined upon the electrodes' spatial location. Functional connectivity is calculated using both power-based and phase-based measures. For power-based we calculate Spearman's correlation and we calculate two different measures for phase-based connectivity, phase-lag index \citep{stam2007phase} and intersite phase clustering ISPC. Note that ISPC represents the clustering in polar space of phase angle differences between electrodes resulting from the convolution between a complex wavelet and the signal and is also referred in the literature as R \citep{cohen2014analyzing}. 
+We are interested in calculating the wiring cost associated with the functional connectivity map \footnote{The measures of correlated activity are not real measures of “connectivity”. We use the term connectivity because is the standard nomenclature but a caveat on the dangers of assuming equality between correlated activity and connectivity is worth mentioning.} defined upon the electrodes' spatial location. Functional connectivity is calculated using both power-based and phase-based measures. For power-based we calculate Spearman's correlation and we calculate two different measures for phase-based connectivity, phase-lag index \citep{stam2007phase} and intersite phase clustering (ISPC). Note that ISPC represents the clustering in polar space of phase angle differences between electrodes resulting from the convolution between a complex wavelet and the signal and is also referred in the literature as R \citep{cohen2014analyzing}. 
 
-Here we briefly outline the three connectivity measures used. First, we describe power-based connectivity and next phase-based connectivity for the phase lag index (PLI) and intersite phase clustering (ISPC) measures. 
+Next, we briefly outline the three connectivity measures used. First, we describe power-based connectivity and next phase-based connectivity for the phase lag index (PLI) and intersite phase clustering (ISPC) measures. 
 
 %TRmove Wiring Cost
 %The last part of this section describes the computation of the wiring cost associated with the functional connectivity map. 
@@ -260,11 +261,11 @@ some cases they may still be susceptible to mixing sources \citep{peraza2012volu
 Phase lag index (PLI) measures the extent to which the distribution of phase angle differences is more to the positive or to the negative side of the imaginary axis on the complex plane. That is, it tells us whether the vector of phase angle differences are pointing up or down in polar space. The idea is that if spurious connectivity is due to volume conduction, the phase angle differences will be distributed around zero radians. It follows that non-volume conducted connectivity will produce a distribution of phase angles that is predominantly on either the positive or the negative side of the imaginary axis. Note that here, contrary to ISPC, the vectors are not averaged, instead is the sign of the imaginary part of the cross spectral density that is averaged.
 
 \begin{equation}
-PLI_{xy} = |n^{-1} \sum_{t=1}^{n}sgn(imag(S_{xyt}))|
+PLI_{xy} = |n^{-1} \sum_{t=1}^{n}sgn(imag(S_{xy}(t)))|
 \label{eq:pli}
 \end{equation}
 
-where \textit{imag} is the imaginary part of $S_{xy(t)}$ or cross-spectral density between channels $x$ and $y$ at time $t$.
+where \textit{imag} is the imaginary part of $S_{xy}(t)$ or cross-spectral density between channels $x$ and $y$ at time $t$.
 %\footnote{The cross-spectral density is the Fourier transform of the cross-correlation between two signals.} \citep{lachaux1999measuring}. 
 The \textit{sgn} function returns +1,-1 or 0. %ys explaineq
 
@@ -312,7 +313,7 @@ We build the network connectivity for each subject and condition in the  frequen
 %%YS plot netork forall/some or none -appendix?
 %%YS Add appendix
 
-It is important to note that although the majority of subject have electrodes in temporal areas and the hippocampi, the location of the electrodes varies substantially from one subject to another and the subjects’ networks are not directly comparable. For example, a subject with a grid of 64 contacts with a separation of 1 mm will necessarily have a larger clustering coefficient than a subject with bitemporal electrodes and similarly  by the same token the average path length in stereotactically implanted electrodes will be larger than in the grid. 
+It is important to note that although the majority of subjects have electrodes in temporal areas and the hippocampi, the location of the electrodes varies substantially from one subject to another and the subjects’ networks are not directly comparable. For example, a subject with a grid of 64 contacts with a separation of 1 cm will necessarily have a larger clustering coefficient than a subject with bitemporal electrodes and by the same token, the average path length in stereotactically implanted electrodes will be larger than in the grid. 
 
 In order to avoid this limitation, we study the difference in the network metrics between conditions for each subject, in this way we can compare the variations in the network topology for the two conditions across subjects.
 %%YS plot metric difference (Fig Z and do the ttest)
@@ -327,14 +328,14 @@ The selection of the threshold is, however, arbitrary, and the resulting network
 
 We overcome this limitation by following a perfusion method used in computational topology \citep{dabaghian2014reconceiving}; \citep{dotko2016topological}, in which rather than having one threshold, we build a vector of thresholds, containing all possible threshold values between the two extreme (minimum and maximum connectivity values). For example, for the matrix $F$, of dimension $n \times n$ we obtain the threshold vector $T$ with $n^2$ elements bounded between the minimum and maximum of $F$, $T = [min(W), max(W)]$.
 
-A set of binary networks is then obtained by thresholding the wiring cost matrix for each possible threshold. Specifically, the binary matrix $B_{\tau}$ for the threshold $\tau$ and functional connectivity matrix $F$ is such that $B_{\tau}(ij) =0$ if the correlation between electrodes $i,j$ is less than the threshold, otherwise $B_{\tau}(ij)=1$. 
+A set of binary networks is then obtained by thresholding the wiring cost matrix for each possible threshold. Specifically, the binary matrix $B_{\tau}$ for the threshold $\tau$ and functional connectivity matrix $F$ is such that $B_{\tau}(ij) =0$ if the correlation between electrodes $i,j$ is less than the threshold,$B_{\tau}(ij)<\tau$, otherwise $B_{\tau}(ij)=1$. 
 Thus, for each threshold value $\tau \in T$, we obtain a binary network and the resulting set of networks is comprised at the two extremes of the spectrum by the disconnected graph $B_{\tau}(V,\emptyset)$ produced when applying the threshold $\tau = min(W)$ and the full graph $B_{\tau}(V,E(W))$ resulting from applying the threshold $\tau = max(W)$. 
 Importantly, the set of binary networks has an internal structure that progressively increases until it becomes a fully connected network. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Results}
 
-First we study the statistical significance for the two conditions, eyes closed and eyes open, using the correlation matrix for power and phase based connectivity in the alpha band. 
+First, we study the statistical significance for the two conditions, eyes closed and eyes open, using the correlation matrix for power and phase based connectivity in the alpha band. 
 
 The effect of a higher degree of alertness (going from eyes closed to eyes open) for the various regions of interest for power-based connectivity in the alpha band is shown in Table \ref{Table:powconnect}. All the patients (11/11) have at least one electrode with a power-based connectivity pattern that is statistically significant for the two conditions.
 
@@ -345,27 +346,26 @@ The effect of a higher degree of alertness (going from eyes closed to eyes open)
 \begin{tabular}{l*{6}{c}r}
 Patient & H & T & F & IH & Grid & D  \\
 \hline
-5 & -- & p=0.0131* &  & &  &  \\ %23,24 (RPT) 31 (RMT)
-6 & -- & p=0.0128* & p=0.013* & p=0.0312* &  & \\ %LAF6,RMT2,RPT4,RPT3,RAIH4,RAF6,RMF,RPF5,RPIH6(only1/6)
-7 &  p=0.027*  &  p=5.35e-06**  & -- &  p=0.0128* & & \\
-10 &  &  &  p=0.0166*  &   p=0.0113* &  &  \\
-11 &  &  p=0.0062** &  &  &   p=0.0248*\\
-12 &  p=0.0175* &  p=0.0058** &  &  & & \\ %PTmore electrodes PIT,PST,PMT
-13 &  &  &  &  &  p=0.018* & -- \\%D in R G in L
-15 &  &   p=0.0017* & -- &  p=0.0011* &  & --\\
-16 &  &  p=0.0244* &  &  &  & -- \\
-17 &  &  &  &  &   p=0.0059* & \\ %Ventral, medial, dorsal
-18 &  &  p=0.0066** &  p=0.0056** &  p=0.0137* &  & --  \\
+5 & -- & p=0.0131(*) &  & &  &  \\ %23,24 (RPT) 31 (RMT)
+6 & -- & p=0.0128(*) & p=0.013(*) & p=0.0312(*) &  & \\ %LAF6,RMT2,RPT4,RPT3,RAIH4,RAF6,RMF,RPF5,RPIH6(only1/6)
+7 &  p=0.027(*)  &  p=5.35e-06(**)  & -- &  p=0.0128(*) & & \\
+10 &  &  &  p=0.0166(*)  &   p=0.0113(*) &  &  \\
+11 &  &  p=0.0062(**) &  &  &   p=0.0248(*)\\
+12 &  p=0.0175(*) &  p=0.0058(**) &  &  & & \\ %PTmore electrodes PIT,PST,PMT
+13 &  &  &  &  &  p=0.018(*) & -- \\%D in R G in L
+15 &  &   p=0.0017(**) & -- &  p=0.0011(**) &  & --\\
+16 &  &  p=0.0244(*) &  &  &  & -- \\
+17 &  &  &  &  &   p=0.0059(**) & \\ %Ventral, medial, dorsal
+18 &  &  p=0.0066(**) &  p=0.0056(**) &  p=0.0137(*) &  & --  \\
 \end{tabular}
 \caption{\label{Table:powconnect} 
-Statistical significance for power-based connectivity in the alpha band calculated for a $95\%$ confidence interval. The p-value is displayed when $p<0.05$, $--$ denotes a non rejection of the null hypothesis and blank is for $p>0.05$. For example, the subject id 5 has electrodes in the hippocampi (H) and in the temporal lobe (T) of which only electrodes in the temporal lobe reject the null hypothesis that the power-based correlation mean in eyes closed and eyes open are in the same. All the patients have at least one channel with statistical significance and the total number of channels channels with $p<0.05$ in the alpha band is 84.
-}
+Statistical significance for power-based connectivity in the alpha band calculated for a $95\%$ confidence interval. The p-value is displayed when $p<0.05$ (* when $p<0.05$ and ** when $p<0.001$) , $--$ denotes a non rejection of the null hypothesis or $p>0.05$. For example, subject 5 has electrodes in the hippocampi (H) and in the temporal lobe (T) of which only electrodes in the temporal lobe reject the null hypothesis that the mean power-based correlation in eyes closed and eyes open are  not significantly different. All patients had at least one channel that was statistically significant with a total of 84 channels with $p<0.05$ in the alpha band.}
 \end{table}
 
 Tables \ref{Table:phaseconnectispc} and \ref{Table:phaseconnectpli} show the statistical significance analysis for phase-based (ISPC and PLI) connectivity in the alpha band.
 %The p-values of the brain regions that contain at least one electrode that differentiate between the two conditions for an alpha level of 0.05 are displayed.
 %\subsection{Phase-based connectivity}
-Only in subjects (2/11), the phase based connectivity shows statistically significant difference between the two conditions in inter hemispheral and frontal electrodes. Deep, hippocampal and temporal electrodes do not show statistically significant difference between the two conditions. This is in agreement with EEG studies that show a decrease in alpha activity across the entire cortex in response to visual stimulation \citep{barry2007eeg}.
+Only for two subjects (2/11), the phase based connectivity demonstrated  statistically significant difference between the two conditions in inter hemispheric and frontal electrodes. Depth, hippocampal and temporal electrodes do not show statistically significant difference between the two conditions. This is in agreement with EEG studies that show a decrease in alpha activity across the entire cortex in response to visual stimulation \citep{barry2007eeg}.
 %Grid and interhemispheric electrode implants are likely subjected to a heavier informational flow than the other regions. A grid occupies a larger extension of the brain than any other implants, and interhemispheric electrodes have the longest strips.  
 %To investigate whether the alpha desynchronization hypothesis holds, we perform multivariate analysis for the mesoscopic wiring cost connectivity matrices.
 
@@ -375,12 +375,12 @@ Only in subjects (2/11), the phase based connectivity shows statistically signif
 \begin{tabular}{l*{6}{c}r}
 Patient & H & T & F & IH & Grid & D  \\
 \hline
-7 &  -- & -- &  p=0.0274* &   p=0.0294* &  &  \\ 
-10 &  &  & p=0.0224* & p=0.0149* & & \\ 
+7 &  -- & -- &  p=0.0274(*) &   p=0.0294(*) &  &  \\ 
+10 &  &  & p=0.0224(*) & p=0.0149(*) & & \\ 
 %13 &   &  &  &    & & 0.0416\\
 \end{tabular}
 \caption{\label{Table:phaseconnectispc} 
-Statistical significance of for phase ispc-based connectivity for each subject in the alpha band. Only 2 subjects out of 11 have one channel or more with statistical significance.
+Statistical significance of phase ISPC-based connectivity for each subject in the alpha band. Only 2 subjects out of 11 have one channel or more with statistical significance.
 }
 \end{table}
 
@@ -393,12 +393,12 @@ Statistical significance of for phase ispc-based connectivity for each subject i
 \begin{tabular}{l*{6}{c}r}
 Patient & H & T & F & IH & Grid & D  \\
 \hline
-7 & -- & -- &  p=0.0274* &  p=0.0247* & -- & -- \\ 
-10 &  &  &   p=0.0406* &   p=0.0087** &  & \\ 
-11 & --  &  p=0.0219* &  &  &  & \\
+7 & -- & -- &  p=0.0274(*) &  p=0.0247(*) & -- & -- \\ 
+10 &  &  &   p=0.0406(*) &   p=0.0087(**) &  & \\ 
+11 & --  &  p=0.0219(*) &  &  &  & \\
 \end{tabular}
 \caption{\label{Table:phaseconnectpli} 
-Statistical significance of for phase pli-based connectivity in the alpha band for each subject in the alpha band. Only 3 subjects out of 11 have one channel or more with statistical significance.
+Statistical significance of phase PLI-based connectivity in the alpha band. Only 3 subjects out of 11 have one channel or more with statistical significance.
 }
 \end{table}
 
@@ -409,8 +409,9 @@ Figure \ref{fig:networkseceo} shows the connectivity network for 6/11 subjects f
 
 \begin{figure}[H]
         \centering
-        \includegraphics[angle=-90,origin=c, width=1\linewidth]{networksec-eoRot}
-        \caption{The figure shows the power-based connectivity network for 6 subjects for eyes closed and eyes open in the alpha band. The threshold used is $t = \mu + \sigma$. Top left and clockwise, subjects 5, 6,7,11,12 and 13, first and third columns depicts the network in eyes closed and columns 2 and 4 in eyes open. Network properties changes can be directly observed, for example, for patient 7 (second row, columns 1 and 3) the number of edges decreases in going from eyes closed to eyes open.}    
+        %angle=-90,
+        \includegraphics[origin=c, width=1\linewidth]{networksec-eoRot2}
+        \caption{The figure shows the power-based connectivity network for 6 subjects for eyes closed and eyes open in the alpha band. The threshold used is $t = \mu + \sigma$. Top left and clockwise, subjects 5, 6,11,12,13 and 17. First and third columns depicts the network in eyes closed and columns 2 and 4 in eyes open. Network properties changes can be directly observed, for example, for patient 11 (second row, columns 1 and 2) the number of edges decreases in going from eyes closed to eyes open, mainly die to loss of connections between the right and the left hippocampi.}    
 \label{fig:networkseceo}
 \end{figure}
 
@@ -420,22 +421,24 @@ It is, however, possible to overcome this limitation if we study in subject basi
 
 \begin{figure}[H]
         \centering
-        \includegraphics[width=0.8\linewidth]{networkmetrics_power}
-        \caption{The figure represents the difference between a number of network metrics for power-based connectivity in the alpha band in eyes closed minus eyes open, namely: Topological overlap measure, Density, Matching index, Clustering, Transitivity, Number of connected components, Community structure, Assortativity, Core/periphery structure, Characteristic path length, Page rank centrality, and Degree. In the x-axis are plotted the network metrics and in the y-axis the difference between the two conditions. The number of points plot for each metric is equal to the number of subjects, when the difference is positive the dot is plot in blue, otherwise in red. In any of the network metrics we observed a strict increase (all red points) or strict decrease (all blue dots) of the topological properties studied. However, since the electrode implants are not coincident it is impossible to draw any overarching conclusion about how the network is affected in going between eyes closed to eyes open.  }
+        \includegraphics[width=\linewidth]{networkmetrics_power2}
+        \vspace{-1em}
+        \caption{The figure represents the difference between a number of network metrics for power-based connectivity in the alpha band in eyes closed minus eyes open. In the x-axis are plotted the network metrics, namely and from left to right: Generalized Topological Overlapping Measure, Matching index, Density coefficient, Clustering coefficient, Transitivity coefficient,  Number of connected components, Size of connected components, Community structure, Assortativity coefficient, Core/periphery structure, Characteristic path length, Eigenvector centrality normalized, Page rank centrality, and Degree. In the y-axis are plotted the difference in value between the two conditions for each metric, when the difference is positive the dot is plot in blue, otherwise in red. The number of points plot for each metric is equal to the number of subjects. In none of the network metrics we observe a strict increase (all red points) or strict decrease (all blue dots) of the topological properties studied. However, since the electrode implants are not coincident it is impossible to draw any overarching conclusion about how the network is affected in going between eyes closed to eyes open.}
 \label{fig:networkmetrics_power}
+
 \end{figure}
 
 \subsection{Power based connectivity (perfusion method)}
 \label{ss:perfusion}
 To acquire a qualitative understanding of both conditions, eyes closed and eyes open, in terms of the wiring cost, we need to do statistics with the distribution of binary networks obtained from using a large number of thresholds.
-The null hypothesis is that the effect of eyes closed is indistinguishable from the effect of eyes open for the wiring cost. We extend the previous approach that consisted in build one connectivity network to building a set of networks one for one possible threshold. By removing the initial assumption of a fixed threshold which is necessarily ad hoc, we can analyze systematically the network properties without introducing any bias in the analysis.
+The null hypothesis is that the effect of eyes closed is indistinguishable from the effect of eyes open for the wiring cost. We extend the previous approach that consists of building the resulting  network from applying the threshold of choice to the connectivity matrix to building a set of networks one for one possible threshold from the same connectivity matrix. Crucially, by removing the initial assumption of a fixed threshold which is necessarily ad hoc, we can study the network dynamics of the n resulting networks, one for each threshold in the n-dimensional vector of thresholds.
 
 Figure \ref{fig:netw-thres} shows the difference in clustering coefficient, density of edges, characteristic path length ad wiring cost between eyes closed and eyes open.
 
 \begin{figure}[H]
         \centering
         \includegraphics[width=1\linewidth]{netw-thres}
-        \caption{The figure shows the difference in clustering coefficientTop left and clockwise, the difference in clustering, density, characteristic path length and wiring cost between eyes closed and eyes open in the alpha band. The x-axis represents a network built upon applying a threshold. The difference always converges to zero, for some large threshold in which the network is fully connected (clique) in that case the networks are identical for the two conditions and the difference is therefore 0. }
+        \caption{The figure (top left and clockwise) shows the difference in clustering coefficient, density, characteristic path length and wiring cost between eyes closed and eyes open in the alpha band. The x-axis represents a network built upon applying a threshold. The difference always converges to zero, for some large threshold in which the network is fully connected (clique) in that case the networks are identical for the two conditions and the difference is therefore 0. }
 \label{fig:netw-thres}
 \end{figure}
 
@@ -470,9 +473,10 @@ The table shows the statistical significance test for four network metrics, clus
 
 \section{Discussion} 
 
-The  brain  is energy  hungry,  it  amounts  to  only the  $2\%$ of the  weight  of the  body,  but  takes  up  to  $20\%$ of the  body's  metabolic demand. Yet, as with all physical systems, the brain has energy limitations. Ram{\'o}n y Cajal was the first to postulate the laws of conservation of pace and material. 
+The  brain  is energy  hungry,  it  amounts  to  only the  $2\%$ of the  weight  of the  body,  but  takes  up  to  $20\%$ of the  body's  metabolic demand. Yet, as with all physical systems, the brain has energy limitations. 
+Ram{\'o}n y Cajal was the first to postulate the laws of conservation for time, space and material \citep{y1995histology}. 
 %The brain is energy hungry, it amounts to only the $2\%$ of the weight of the body but takes up to $20\%$ of the body metabolic demand. 
-It follows that there is a strong pressure for an efficient use of resources, for example the minimization of the synaptic wiring cost at axonal, dendritic and synaptic between nerve cells.
+It follows that there is a strong pressure for efficient use of resources, for example the minimization of the synaptic wiring cost at axonal, dendritic and synaptic level.
 Longer connections, and those with greater cross-sectional area, are more costly because they occupy more physical space, require greater material resources, and consume more energy per connection. Networks that strictly conserve material and space (e.g. lattice) will likely pay a price in terms of conservation of time: it will take longer to communicate an electrophysiological signal between nodes separated by the longer path lengths that are characteristic of lattices \citep{fornito2016fundamentals}. There are trade-offs between biological cost and topological value.
 
 Functional connectivity analysis from EEG data provides an explanation for alpha desynchronization in terms of the number of connections i.e., the number of connections decreases when one's eyes are open compared to closed. It is worth noting that the term desynchronization is defined in the literature quite vaguely, and used to mean very different things. Synchronization some times refers an to increase in band power in some frequency band (e.g. alpha) and conversely, desynchronization is also associated with a loss of power in the frequency band of interest. 
@@ -485,17 +489,17 @@ Alpha desynchronization or the alpha blocking response to eye opening was origin
 The wiring cost, as defined here, combines the physical distance between electrodes and the statistical correlation and takes full advantage of the spatial resolution of the ECoG signal. Specifically, the local wiring cost of two electrodes represents the product between the distance and the correlation value. The combination of functional connectivity and distance networks allows us to quantify the wiring cost for the two conditions under study -eyes closed and eyes open.
 The rationale behind this approach is that the wiring cost might explain, at least in energy minimization terms, why, among all possible configurations, some functional connectivity patterns are selected rather than others. We mathematically define the wiring cost for a given connectivity pattern in Equation \ref{eq:pairwc}. 
 
-We do not find compelling evidence for 
-the alpha desynchronization in phase-based connectivity analysis (except for interhemispheral and frontal electrodes). Power-based connectivity, on the other hand, results to be a more consistent predictor of alpha desynchronization, in particular in temporal electrodes. We find that the wiring cost does a better job in differentiating between eyes closed and eyes open than network metrics such as characteristic path length,clustering or the edges density.
+We do not find compelling evidence for the alpha desynchronization in phase-based connectivity analysis (except for interhemispheral and frontal electrodes). Power-based connectivity, on the other hand, is a more consistent predictor of alpha desynchronization, in particular within temporal electrodes. We find that the wiring cost does a better job in differentiating between eyes closed and eyes open than network metrics such as characteristic path length,clustering or the edge density.
 
 To investigate the loss of connectivity predicted by the alpha desynchronization hypothesis without relying on the adoption of a network threshold, we calculated the distribution of network properties values associated with the connectivity matrix from a threshold vector bounded by the minimum and maximum functional connectivity value.
 We find that the location of the electrodes is the most important factor to be considered when studying the alpha 
 desynchronizationin ECoG.
 
-Although intracranial electroencephalography has unmatched spatial and temporal specificity, may not the optimal method for studying macroscopic aspects of the human brain. This study has the limitation that the electrode implants tend to be located in the seizure sensitive temporal lobe and leave untouched occipital and parietal lobes. Furthermore, the participants are patients with drug resistant epilepsy, who likely have the functioning in some, if not all the brain areas where they have the implants, seriously compromised by the pathology over the years. A more straightforward model system for the study of the wiring cost difference between two connectivity patterns would be EEG or fMRI, in which the signal source is regularized in a common brain volume template. 
-%However, these techniques are limited by the source reconstruction problem, which is not as problematic in iEEG. 
+Although intracranial electroencephalography has unmatched spatial and temporal specificity, it may not be the optimal method for studying macroscopic aspects of the human brain. This study has the limitation that the electrode implants tend to be located in the seizure sensitive temporal lobe and leave untouched occipital and parietal lobes. %Furthermore, the participants are patients with drug resistant epilepsy, who likely have the functioning of the brain compromised by the pathology over the years.
+A complementary model system for the study of the wiring cost difference between two connectivity patterns would be EEG or fMRI, in which the signal source is regularized in a common brain volume template. 
+However, these techniques are limited by the source reconstruction problem, which is not as problematic in iEEG. 
 
-Ideally, this study would have used randomization of the two conditions -eyes closed and eyes open- altering the order. In the alpha blocking response to eye opening initially spotted by Berger (Berger’s effect), also called alpha desynchronization, there is a specific sequence – eyes closed precedes eyes open- and this is the sequence that we have used.
+Ideally, this study would have used randomization of the two conditions -eyes closed and eyes open- altering the order. In the alpha blocking response to eye opening initially described by Berger (Berger’s effect), also called alpha desynchronization, there is a specific sequence – eyes closed precedes eyes open- and this is the sequence that we have used.
 It is however possible to go beyond the alpha blocking response to a more general study of the electrophysiological signatures of eyes open and eyes closed. This would require randomization and will be studied in future work in which we perform also an intervention between eyes closed and eyes open, alternatively.
 
 The results here obtained can be of interest to resting state (sleep, awake), task-based and pathological conditions, for example in epileptic seizures. In a forthcoming study, we show that the wiring cost increases dramatically in the ictal period compared to the pre-ictal period.   
@@ -513,13 +517,9 @@ The authors declare no competing financial interest.
 \bibliographystyle{naturemag}
 \bibliography{C:/workspace/github/papers/bibliography-jgr/bibliojgr}
 
-
+\newpage
 Authors' Contribution statement
 
-JGR and SF wrote the main manuscript text. JGR analyzed data and conceived the wiring cost model. SF performed the experiments. DM prepared figures 8 and 9 and implemented the wiring cost model. JLPV supervised the project and and built initial wiring cost models. TV provided access to the clinical data prepared figures 1, 2, and analyzed electrophysiolgical data.
+JGR and SF wrote the main manuscript. JGR analyzed data and conceived the wiring cost model. SF performed the experiments. DM prepared figure 1 and 2 and analyzed electrophysiolgical data, JLPV supervised the project and and built initial wiring cost models. TV provided access to the clinical and analyzed electrophysiolgical data.
 
 \end{document}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
